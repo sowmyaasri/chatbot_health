@@ -1,8 +1,7 @@
 import streamlit as st
-from src.backend import AI
-import time
-import random
+from src.backend import AI  # Ensure this is correctly defined in backend.py
 import os
+import random
 
 # Apply Custom CSS for Background and Chat Styling
 st.markdown(
@@ -27,7 +26,7 @@ st.markdown(
 
 # Function to play background music
 def play_music():
-    music_path = "C:\\Users\\coral\\Downloads\\calm-background-music.mp3"
+    music_path = os.path.join("downloads", "calm-background-music.mp3")  # Use relative path
     if os.path.exists(music_path):
         with open(music_path, "rb") as audio_file:
             st.audio(audio_file.read(), format="audio/mp3", autoplay=True)
@@ -60,7 +59,7 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
 
 if "llm" not in st.session_state:
-    st.session_state.llm = AI()
+    st.session_state.llm = AI()  # Ensure backend.py contains AI class
 
 # Display previous messages
 for message in st.session_state.messages:
@@ -68,7 +67,8 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # Handle User Input
-if prompt := st.chat_input("Enter your message here..."):
+prompt = st.chat_input("Enter your message here...")  # Ensure Streamlit version >= 1.25
+if prompt:
     st.chat_message("user").markdown(prompt)
     st.session_state.messages.append({"role": "user", "content": prompt})
 
