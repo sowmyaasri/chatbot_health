@@ -84,17 +84,13 @@ if prompt:
 st.markdown("### React to the chatbot's response:")
 reaction = st.radio("", ["😀 Happy", "🤔 Thoughtful", "😢 Sad", "😡 Angry"], horizontal=True)
 
-# Confetti Effect ONLY for Happy Reaction
-if reaction == "😀 Happy":
-    st.balloons()
-    st.success("Glad to hear that! 😊")
 
 # GIF Responses
 gif_dict = {
     "😀 Happy": "https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif",
-    "🤔 Thoughtful": "https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif",
-    "😢 Sad": "https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif",
-    "😡 Angry": "https://media.giphy.com/media/3o6ZsYm5SxwKNr9hDi/giphy.gif"
+    "🤔 Thoughtful": "C:\\Users\\coral\\OneDrive\\Desktop\\thoughtful.gif",
+    "😢 Sad": "C:\\Users\\coral\\OneDrive\\Desktop\\sad picka.gif",
+    "😡 Angry": "C:\\Users\\coral\\OneDrive\\Desktop\\angry.jpg"
 }
 if reaction in gif_dict:
     st.image(gif_dict[reaction], width=200)
