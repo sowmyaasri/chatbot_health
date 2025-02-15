@@ -25,7 +25,7 @@ st.markdown(
 
 # ✅ Function to play background music
 def play_music():
-    audio_file = open("C:\Users\coral\Downloads\calm-background-music-ambient-guitar-298550.mp3", "rb")
+    audio_file = open("C:\\Users\\coral\\Downloads\\calm-background-music-ambient-guitar-298550.mp3", "rb")
     audio_bytes = audio_file.read()
     st.audio(audio_bytes, format="audio/mp3", autoplay=True)
 
