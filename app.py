@@ -26,7 +26,7 @@ st.markdown(
 
 # Function to play background music
 def play_music():
-    music_path = os.path.join("downloads", "calm-background-music.mp3")  # Use relative path
+    music_path = os.path.join("downloads", "C:\Users\coral\Downloads\calm-background-music-ambient-guitar-298550.mp3")  # Use relative path
     if os.path.exists(music_path):
         with open(music_path, "rb") as audio_file:
             st.audio(audio_file.read(), format="audio/mp3", autoplay=True)
